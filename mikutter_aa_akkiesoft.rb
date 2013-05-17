@@ -18,11 +18,11 @@ Plugin.create(:mikutter_aa_akkiesoft) do
 　՞
 　　　　　　ਊ
 EOM
-    Post.primary_service.update(strs)
+    Post.primary_service.update(:message => strs)
   end
 
   command(
-    :aa_akkiesoft_jibaku,
+    :aa_akkiesoft_oeeee,
     name: 'AA_吐く',
     condition: -> _ { true },
     visible: true,
@@ -41,11 +41,11 @@ EOM
 　　　　　　　　 ||
 　　　　　　　　 Ｕ
 EOM
-    Post.primary_service.update(strs)
+    Post.primary_service.update(:message => strs)
   end
 
   command(
-    :aa_akkiesoft_jibaku,
+    :aa_akkiesoft_killme_is_end,
     name: 'AA_チ○ーリー・ブラ○ン',
     condition: -> _ { true },
     visible: true,
@@ -62,6 +62,6 @@ EOM
  ／　 　　　￣　　 ヽ
  /　|　　　　　　　　　iヽ
 EOM
-    Post.primary_service.update(strs)
+    Post.primary_service.update(:message => strs)
   end
 end
