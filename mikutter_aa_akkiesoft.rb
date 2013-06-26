@@ -64,4 +64,15 @@ EOM
 EOM
     Post.primary_service.update(:message => strs)
   end
+
+  command(
+    :aa_akkiesoft_poizon,
+    name: 'ツイートをPOIZONする',
+    condition: -> _ { true },
+    visible: true,
+    role: :timeline
+  ) do
+    strs = "※このツイートは言いたいことも言えない世の中のためPOIZONされました※"
+    Post.primary_service.update(:message => strs)
+  end
 end
