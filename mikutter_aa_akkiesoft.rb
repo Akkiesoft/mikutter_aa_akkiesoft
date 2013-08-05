@@ -21,6 +21,24 @@ EOM
     Post.primary_service.update(:message => strs)
   end
 
+Plugin.create(:mikutter_aa_akkiesoft) do
+  command(
+    :aa_akkiesoft_jibaku,
+    name: 'AA_自爆後(ナウシカEND)',
+    condition: -> _ { true },
+    visible: true,
+    role: :timeline
+  ) do
+    strs = <<"EOM"
+　　　∞
+　　　∫
+,';:☜;.`,ਊ,,;';,;☞,.՞
+՞
+　　　　　　　お わ り
+EOM
+    Post.primary_service.update(:message => strs)
+  end
+
   command(
     :aa_akkiesoft_oeeee,
     name: 'AA_吐く',
