@@ -21,9 +21,8 @@ EOM
     Post.primary_service.update(:message => strs)
   end
 
-Plugin.create(:mikutter_aa_akkiesoft) do
   command(
-    :aa_akkiesoft_jibaku,
+    :aa_akkiesoft_jibaku_end,
     name: 'AA_自爆後(ナウシカEND)',
     condition: -> _ { true },
     visible: true,
