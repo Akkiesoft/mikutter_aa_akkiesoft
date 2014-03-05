@@ -4,11 +4,11 @@ Plugin.create(:mikutter_aa_akkiesoft) do
   command(
     :aa_akkiesoft_jibaku,
     name: 'AA_自爆する',
-    condition: -> _ { true },
+    condition: lambda{ |opt| true },
     visible: true,
-    role: :timeline
-  ) do
-    strs = <<"EOM"
+    role: :postbox
+  ) do |opt|
+    strs =  <<"EOM"
 　　☝
 　　　　　　　　՞
 　＿人人人人人人＿
@@ -18,16 +18,18 @@ Plugin.create(:mikutter_aa_akkiesoft) do
 　՞
 　　　　　　ਊ
 EOM
-    Post.primary_service.update(:message => strs)
+    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
+    new = box.text
+    box.text = new.insert(box.cursor_position, strs)
   end
 
   command(
     :aa_akkiesoft_jibaku_end,
     name: 'AA_自爆後(ナウシカEND)',
-    condition: -> _ { true },
+    condition: lambda{ |opt| true },
     visible: true,
-    role: :timeline
-  ) do
+    role: :postbox
+  ) do |opt|
     strs = <<"EOM"
 　　　∞
 　　　∫
@@ -35,16 +37,18 @@ EOM
 ՞
 　　　　　　　お わ り
 EOM
-    Post.primary_service.update(:message => strs)
+    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
+    new = box.text
+    box.text = new.insert(box.cursor_position, strs)
   end
 
   command(
     :aa_akkiesoft_oeeee,
     name: 'AA_吐く',
-    condition: -> _ { true },
+    condition: lambda{ |opt| true },
     visible: true,
-    role: :timeline
-  ) do
+    role: :postbox
+  ) do |opt|
     strs = <<"EOM"
 オエーー!!!!　＿_
 　　　 ＿＿_／　 ＼
@@ -58,16 +62,18 @@ EOM
 　　　　　　　　 ||
 　　　　　　　　 Ｕ
 EOM
-    Post.primary_service.update(:message => strs)
+    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
+    new = box.text
+    box.text = new.insert(box.cursor_position, strs)
   end
 
   command(
     :aa_akkiesoft_killme_is_end,
     name: 'AA_チ○ーリー・ブラ○ン',
-    condition: -> _ { true },
+    condition: lambda{ |opt| true },
     visible: true,
-    role: :timeline
-  ) do
+    role: :postbox
+  ) do |opt|
     strs = <<"EOM"
 　　　　　 ,,　＿
 　　　／ 　　　 ｀ ､
@@ -79,7 +85,25 @@ EOM
  ／　 　　　￣　　 ヽ
  /　|　　　　　　　　　iヽ
 EOM
-    Post.primary_service.update(:message => strs)
+    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
+    new = box.text
+    box.text = new.insert(box.cursor_position, strs)
+  end
+
+  command(
+    :aa_akkiesoft_furutto,
+    name: 'AA_フルット風ネコ',
+    condition: lambda{ |opt| true },
+    visible: true,
+    role: :postbox
+  ) do |opt|
+    strs = <<"EOM"
+　∧＿_∧
+（　 ՞ ‸ ՞）
+EOM
+    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
+    new = box.text
+    box.text = new.insert(box.cursor_position, strs)
   end
 
   command(
