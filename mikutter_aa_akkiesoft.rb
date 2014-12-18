@@ -9,7 +9,7 @@ Plugin.create(:mikutter_aa_akkiesoft) do
     role: :postbox
   ) do |opt|
     strs =  <<"EOM"
-　　☝
+.　　☝
 　　　　　　　　՞
 　＿人人人人人人＿
 　＞　(　 　　 )　＜　　☞
@@ -31,11 +31,11 @@ EOM
     role: :postbox
   ) do |opt|
     strs = <<"EOM"
-　　　∞
-　　　∫
-,';:☜;.`,ਊ,,;';,;☞,.՞
-՞
-　　　　　　　お わ り
+.　　　　　∞
+　　　　　∫
+　　,';:☜;.`,ਊ,,;';,;☞,.՞
+　　՞
+　　　　　　　　　お わ り
 EOM
     box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
     new = box.text
@@ -75,7 +75,7 @@ EOM
     role: :postbox
   ) do |opt|
     strs = <<"EOM"
-　　　　　 ,,　＿
+.　　　　　,,　＿
 　　　／ 　　　 ｀ ､
 　　/　　(_ﾉL_）　 ヽ
  　/　　 ´・　 ・｀　　l
@@ -98,7 +98,7 @@ EOM
     role: :postbox
   ) do |opt|
     strs = <<"EOM"
-　∧＿_∧
+.　∧＿_∧
 （　 ՞ ‸ ՞）
 EOM
     box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
