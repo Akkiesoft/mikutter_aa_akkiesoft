@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 
 Plugin.create(:mikutter_aa_akkiesoft) do
+  def set_aa_to_postbox(opt, aa)
+    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
+    box.text = box.text.insert(box.cursor_position, aa)
+  end
+
   command(
     :aa_akkiesoft_jibaku,
     name: 'AA_自爆する',
@@ -18,9 +23,7 @@ Plugin.create(:mikutter_aa_akkiesoft) do
 　՞
 　　　　　　ਊ
 EOM
-    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
-    new = box.text
-    box.text = new.insert(box.cursor_position, strs)
+    set_aa_to_postbox(opt, strs)
   end
 
   command(
@@ -37,9 +40,7 @@ EOM
 　　՞
 　　　　　　　　　お わ り
 EOM
-    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
-    new = box.text
-    box.text = new.insert(box.cursor_position, strs)
+    set_aa_to_postbox(opt, strs)
   end
 
   command(
@@ -62,9 +63,7 @@ EOM
 　　　　　　　　 ||
 　　　　　　　　 Ｕ
 EOM
-    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
-    new = box.text
-    box.text = new.insert(box.cursor_position, strs)
+    set_aa_to_postbox(opt, strs)
   end
 
   command(
@@ -85,9 +84,7 @@ EOM
  ／　 　　　￣　　 ヽ
  /　|　　　　　　　　　iヽ
 EOM
-    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
-    new = box.text
-    box.text = new.insert(box.cursor_position, strs)
+    set_aa_to_postbox(opt, strs)
   end
 
   command(
@@ -101,9 +98,7 @@ EOM
 .　∧＿_∧
 （　 ՞ ‸ ՞）
 EOM
-    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
-    new = box.text
-    box.text = new.insert(box.cursor_position, strs)
+    set_aa_to_postbox(opt, strs)
   end
 
   command(
