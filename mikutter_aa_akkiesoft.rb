@@ -104,23 +104,23 @@ EOM
   command(
     :aa_akkiesoft_poizon,
     name: 'ツイートをPOIZONする',
-    condition: -> _ { true },
+    condition: lambda{ |opt| true },
     visible: true,
     role: :timeline
-  ) do
+  ) do |opt|
     strs = "※このツイートは言いたいことも言えない世の中のためPOIZONされました※"
-    Post.primary_service.update(:message => strs)
+    compose(opt.world, body: strs)
   end
 
   command(
     :aa_akkiesoft_poizon2,
     name: 'ツイートをｵｯｵｳする',
-    condition: -> _ { true },
+    condition: lambda{ |opt| true },
     visible: true,
     role: :timeline
-  ) do
+  ) do |opt|
     strs = "※俺は俺を騙すことなく生きていくためこのツイートはｵｯｵｳされました※"
-    Post.primary_service.update(:message => strs)
+    compose(opt.world, body: strs)
   end
 
 end
