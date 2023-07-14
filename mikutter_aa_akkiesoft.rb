@@ -2,8 +2,12 @@
 
 Plugin.create(:mikutter_aa_akkiesoft) do
   def set_aa_to_postbox(opt, aa)
-    box = Plugin[:gtk].widgetof(opt.widget).widget_post.buffer
+    box = Plugin[:gtk3].widgetof(opt.widget).widget_post.buffer
     box.text = box.text.insert(box.cursor_position, aa)
+  end
+  def post(str)
+    world, = Plugin.filtering(:world_current, nil)
+    compose(world, body: str)
   end
 
   command(
@@ -108,8 +112,7 @@ EOM
     visible: true,
     role: :timeline
   ) do |opt|
-    strs = "※このツイートは言いたいことも言えない世の中のためPOIZONされました※"
-    compose(opt.world, body: strs)
+    post("※このツイートは言いたいことも言えない世の中のためPOIZONされました※")
   end
 
   command(
@@ -119,8 +122,7 @@ EOM
     visible: true,
     role: :timeline
   ) do |opt|
-    strs = "※俺は俺を騙すことなく生きていくためこのツイートはｵｯｵｳされました※"
-    compose(opt.world, body: strs)
+    post("※俺は俺を騙すことなく生きていくためこのツイートはｵｯｵｳされました※")
   end
 
 end
